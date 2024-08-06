@@ -25,7 +25,17 @@ function YourInfo() {
               <input type="number" id="number" name="number" />
             </div>
 
-            <button type="submit">Sign in</button>
+            <div>
+              <div>
+                <button type="submit">Sign in</button>
+              </div>
+              <div>
+                <button type="submit">Sign in</button>
+              </div>
+            </div>
+
+            
+
           </form>
         </div>
 

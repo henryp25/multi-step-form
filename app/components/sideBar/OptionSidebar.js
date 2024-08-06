@@ -8,9 +8,12 @@ function OptionSidebar() {
           <div className="listItem">
             <span className="number selected">1</span>
             <div className="text">
-              Step 1
-              <br />
-              Your Info
+              <div id='stepNumber'>
+                Step 1
+              </div>
+              <div id='stepName'>
+               Your Info
+              </div>
             </div>
           </div>
         </li>
@@ -18,9 +21,12 @@ function OptionSidebar() {
           <div className="listItem">
             <span className="number">2</span>
             <div className="text">
+             <div id='stepNumber'>
               Step 2
-              <br />
+              </div>
+              <div id='stepName'>
               Select Plan
+              </div>  
             </div>
           </div>
         </li>
@@ -28,21 +34,27 @@ function OptionSidebar() {
           <div className="listItem">
             <span className="number">3</span>
             <div className="text">
-              Step 3
-              <br />
-              Add-Ons
+              <div id='stepNumber'>
+                Step 3
+                </div>
+              <div id='stepName'>
+                Add-Ons
+                </div>  
+              </div>
             </div>
-          </div>
         </li>
         <li>
           <div className="listItem">
             <span className="number">4</span>
-            <div className="text">
+          <div className="text">
+            <div id='stepNumber'>
               Step 4
-              <br />
+            </div>
+            <div id='stepName'>
               Summary
             </div>
-          </div>
+           </div>
+          </div> 
         </li>
       </ul>
         
