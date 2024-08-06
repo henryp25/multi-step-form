@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <div className="formContainer">
       <div className="formBox">
-      <img src="images/icon-checkmark.svg" alt="Icon 1" />
+      
         <OptionSidebar />
         <YourInfo />
         <Summary />

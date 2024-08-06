@@ -3,7 +3,7 @@ import React from 'react'
 function YourInfo() {
 
 
-
+  
   return (
     <div className='userInfo'>
         <div className='selectorTitle'>
