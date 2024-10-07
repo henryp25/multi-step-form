@@ -2,7 +2,7 @@ import React from 'react'
 
 function AddOns() {
   return (
-    <div className='addonContainer'>
+    <div className='userInfo'>
       
     </div>
   )
