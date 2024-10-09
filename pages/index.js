@@ -25,9 +25,19 @@ export default function Home() {
 
   const goToNextStep = () => {
     console.log("Current Step: ", currentStep)
+    if (currentStep >= 4) {
+      setCurrentStep(4)
+      return;
+    }
     setCurrentStep(currentStep + 1)
   };
-  const goToPreviousStep = () => setCurrentStep(currentStep - 1);
+  const goToPreviousStep = () => {
+    if (currentStep <= 1) {
+      setCurrentStep(1);
+      return;
+    }
+    setCurrentStep(currentStep - 1);
+  }
 
   const handleInputChange = (e) => {
     const {name, value} = e.target;
@@ -43,19 +53,13 @@ export default function Home() {
     <div className="formContainer">
       <div className="formBox">
         <OptionSidebar />
-        {currentStep === 1 && <YourInfo />}
-        {currentStep === 2 && <SelectPlan />}
-        {currentStep === 3 && <AddOns />}
-        {currentStep === 4 && <Summary />}
+        {currentStep === 1 && <YourInfo goToPreviousStep={goToPreviousStep} goToNextStep={goToNextStep} />}
+        {currentStep === 2 && <SelectPlan goToPreviousStep={goToPreviousStep} goToNextStep={goToNextStep}  />}
+        {currentStep === 3 && <AddOns goToPreviousStep={goToPreviousStep} goToNextStep={goToNextStep}  />}
+        {currentStep === 4 && <Summary goToPreviousStep={goToPreviousStep} goToNextStep={goToNextStep}  />}
+
       </div>
-      <div>
-        <div>
-          <button type="submit" onClick={goToPreviousStep}>Go Back</button>
-        </div>
-        <div>
-          <button type="submit" onClick={goToNextStep}>Next Step</button>
-        </div>
-      </div>
+
     </div>
   );
 }

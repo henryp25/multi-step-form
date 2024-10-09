@@ -1,9 +1,14 @@
 import React from 'react'
 
-function Summary() {
+function Summary({goToNextStep, goToPreviousStep}) {
   return (
     <div className='userInfo'>
-      <h1>Test</h1>
+      <div className="ButtonContainer">
+        <button type="submit" onClick={goToPreviousStep}>Go Back</button>
+      </div>
+      <div>
+        <button type="submit" onClick={goToNextStep}>Next Step</button>
+      </div>
     </div>
   )
 }

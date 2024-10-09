@@ -1,13 +1,13 @@
 import React from 'react'
 
-function YourInfo() {
+function YourInfo({goToNextStep, goToPreviousStep}) {
 
 
   
   return (
     <div className='userInfo'>
         <div className='selectorTitle'>
-          <h2 >Personal Information</h2>
+          <h2 >Personal Info</h2>
           <p> Please Provide your name, email address and Phone number</p>
         </div>
         <div>
@@ -27,6 +27,15 @@ function YourInfo() {
 
           </form>
         </div>
+        <div className="ButtonContainer">
+          <div>
+            <button type="submit" onClick={goToPreviousStep}>Go Back</button>
+          </div>
+          <div>
+            <button type="submit" onClick={goToNextStep}>Next Step</button>
+          </div>
+        </div>
+
 
     </div>
   )

@@ -22,12 +22,12 @@
   );
 }
 
-body, html {
+/* body, html {
   height: 100%;
   margin: 0;
 
 
-}
+} */
 
 .formContainer{
     display: flex;
@@ -59,7 +59,7 @@ body, html {
 .optionContainer{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content:flex-start;
     align-items: center;
     width: 50%;
     height: 100%;
@@ -73,36 +73,39 @@ body, html {
 
 .numberedList{
   display: flex;
-  
   flex-direction: column;
   list-style-type: none;
   padding: 0;
   display: flex;
   gap: 10px;
   margin-right: 20px;
+  margin-top: 200px;
 }
 
 .listItem {
   display: flex;
   align-items: center;
+  margin: 10px;
 }
 
 .listItem .text{
-  font-size: 20px;
+  font-size: 35px;
   font-family: Ubuntu-Bold, Arial, sans-serif;
   margin-left: 10px;
 }
 
 .listItem .text #stepName{
-  font-size: 20px;
+  font-size: 35px;
   font-family: Ubuntu-Bold, Arial, sans-serif;
   color: white;
+  text-transform: uppercase;
 }
 
 .listItem .text #stepNumber{
-  font-size: 17px;
+  font-size: 22px;
   font-family: Ubuntu-Regular, Arial, sans-serif;
   color: white;
+  text-transform: uppercase;
 }
 
 .number {
@@ -131,7 +134,6 @@ body, html {
 .selectorTitle h2{
     font-size: 35px;
     font-family: Ubuntu-Bold, Arial, sans-serif;
-    margin: 10px;
 }
 .selectorTitle p{
     font-size: 16px;
@@ -144,7 +146,6 @@ body, html {
 .userInfo{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     border-radius: 10px;
     width: 70%;
@@ -159,9 +160,25 @@ body, html {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     margin: 5px;
     padding: 5px;
+}
+.userInput label{
+    align-items: flex-start;
+    text-transform:capitalize;
+    font-size: 20px;
+    font-family: Ubuntu-Bold, Arial, sans-serif;
+    margin: 5px;
+
+}
+
+.userInput input{
+    width: 400px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #8d8ca6;
+    padding: 5px;
+    margin: 5px;
 }
 
 /*Summary Component */
@@ -195,17 +212,67 @@ body, html {
 
 /*Addons Component */
 
-.addonContainer{
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-  width: 70%;
-  height: 100%;
-  background-color: #ffffff;
-  margin: 10px;
-  padding: 10px
+.ButtonContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+}
+.ButtonContainer button{
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #483EFF;
+    color: white;
+    font-size: 20px;
+    font-family: Ubuntu-Bold, Arial, sans-serif;
+    border: none;
+    margin: 10px;
+    margin-top: 200px;
+}
+.ButtonContainer button:hover{
+    background-color: #aab8e3;
+    color: black;
 }
 
+.planContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 
+/* Select Your Plan */
+.plan{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+    height: 300px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+
+
+}
+
+.planContainer{}
+
+.planDetails{
+
+}
+.planImage{
+
+}
+
+.timeSwitch{
+    display: flex;
+    background-color: #8d8ca6;
+    width: 80%;
+    height: 40px;
+    border-radius: 20px;
+    margin: 25px;
+}
