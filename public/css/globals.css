@@ -28,7 +28,9 @@
 
 
 } */
-
+.hidden {
+  display: none;
+}
 .formContainer{
     display: flex;
     justify-content: center;
@@ -42,7 +44,6 @@
     flex-direction:row;
     justify-content: center;
     align-items: center;
-    width: 70%;
     height: 100%;
     background-color:blanchedalmond ;
     height: 80vh;
@@ -123,10 +124,8 @@
   font-weight: bold;
   margin-right: 10px;
 }
-
-.number .selected {
+.selected {
   background-color: #aab8e3;
-  color: black;
 }
 
 
@@ -252,27 +251,220 @@
     height: 300px;
     margin: 10px;
     padding: 10px;
+    border: 1px solid #8d8ca6;
     border-radius: 10px;
     background-color: #ffffff;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
-
 
 }
+.plan:hover{
+    background-color: #0f0f0f7b;
+    color: white;
+}
 
-.planContainer{}
-
+.clicked {
+  background-color: #9aaee2;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+}
 .planDetails{
-
-}
-.planImage{
-
+    width: 70%;
+    margin: 10px;
+    padding: 10px;
 }
 
 .timeSwitch{
     display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #8d8ca6;
     width: 80%;
     height: 40px;
     border-radius: 20px;
     margin: 25px;
+}
+.timeSwitch p{
+    font-size: 20px;
+    font-family: Ubuntu-Bold, Arial, sans-serif;
+    color: white;
+    margin: 10px;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.addons{
+    margin: 10px;
+    padding: 10px;
+}
+/* Addons Page */
+.addonBox{
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.456);
+}
+.toggle-button{
+    margin: 10px;
+    height: 20%;
+    width: 6%;
+}
+
+.addonCost{
+  font-size: 15px;
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+.addonContent{
+  margin: 10px;
+}
+.addonContent p{
+  font-size: 15px;
+  font-family: Ubuntu-Regular, Arial, sans-serif;
+}
+.addonContent h2{
+  font-size: 20px;
+  font-family: Ubuntu-Bold, Arial, sans-serif;
+}
+ #addonButton{
+  margin: 10px;;
+ }
+
+@media (max-width: 768px) {
+  /* General container changes for mobile */
+  .formBox, .optionContainer, .userInfo, .summaryContainer, .selectplanContainer {
+    width: 90%;  /* Reduce width */
+    height: auto; /* Let height adjust naturally */
+    margin: 10px; /* Smaller margin */
+  }
+
+  /* Stack elements vertically for smaller screens */
+  .formBox {
+    flex-direction: column; 
+  }
+
+  .optionContainer {
+    width: 100%; /* Take full width for mobile */
+    height: auto; /* Adjust height automatically */
+  }
+
+  /* List Items and Text Adjustments */
+  .listItem .text {
+    font-size: 18px; /* Decrease font size for smaller screens */
+  }
+
+  .listItem .text #stepName, .listItem .text #stepNumber {
+    font-size: 18px; /* Adjust text size for step names and numbers */
+  }
+
+  /* User Input adjustments */
+  .userInput input {
+    width: 100%; /* Full width on smaller devices */
+    font-size: 16px; /* Decrease input font size */
+  }
+
+  /* Button adjustments */
+  .ButtonContainer button {
+    width: 100px;  /* Smaller buttons for mobile */
+    height: 40px;
+    font-size: 16px; /* Decrease font size */
+  }
+
+  /* Adjust plan layout for mobile */
+  .plan {
+    width: 100%; /* Make each plan take full width on mobile */
+    height: auto; /* Adjust height automatically */
+    margin: 5px 0; /* Stack plans vertically */
+  }
+
+  /* Time switch adjustments */
+  .timeSwitch {
+    width: 100%; /* Full width on mobile */
+    margin: 10px 0; /* Adjust margin */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further adjustments for smaller mobile screens */
+  .listItem .text {
+    font-size: 16px; /* Reduce font size even more for smaller screens */
+  }
+
+  .ButtonContainer button {
+    width: 90px;  /* Smaller button */
+    height: 35px; /* Smaller height */
+    font-size: 14px; /* Smaller text */
+  }
+
+  .userInput input {
+    font-size: 14px; /* Smaller input text size */
+  }
+
+  .plan {
+    height: 250px; /* Reduce height of plans */
+  }
 }

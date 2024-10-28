@@ -15,6 +15,13 @@ import AddOns from "../app/components/userSelections/AddOns";
 
 export default function Home() {
   const [currentStep, setCurrentStep] = useState(1);
+  const [userInput, setUserInput] = useState({
+    plan: "",  // Initial value for 'plan'
+  });
+
+
+
+  console.log(userInput.plan)
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -47,15 +54,13 @@ export default function Home() {
     }));
   }
 
-
-
   return (
     <div className="formContainer">
       <div className="formBox">
-        <OptionSidebar />
+        <OptionSidebar currentStep={currentStep} />
         {currentStep === 1 && <YourInfo goToPreviousStep={goToPreviousStep} goToNextStep={goToNextStep} />}
-        {currentStep === 2 && <SelectPlan goToPreviousStep={goToPreviousStep} goToNextStep={goToNextStep}  />}
-        {currentStep === 3 && <AddOns goToPreviousStep={goToPreviousStep} goToNextStep={goToNextStep}  />}
+        {currentStep === 2 && <SelectPlan setUserInput={setUserInput} goToPreviousStep={goToPreviousStep} goToNextStep={goToNextStep}  />}
+        {currentStep === 3 && <AddOns  userInput={userInput} goToPreviousStep={goToPreviousStep} goToNextStep={goToNextStep}  />}
         {currentStep === 4 && <Summary goToPreviousStep={goToPreviousStep} goToNextStep={goToNextStep}  />}
 
       </div>

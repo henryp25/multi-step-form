@@ -1,6 +1,21 @@
+import { useAmp } from 'next/amp'
 import React from 'react'
+import { useEffect } from 'react'
 
-function OptionSidebar() {
+function OptionSidebar({currentStep}) {
+
+  useEffect(() => {
+    const listItems = document.querySelectorAll('.numberedList li');
+    listItems.forEach((item, index) => {
+      if (index + 1 === currentStep) {
+        item.querySelector('.number').classList.add('selected');
+      } else {
+        item.querySelector('.number').classList.remove('selected');
+      }
+    });
+  }, [currentStep]);
+
+
   return (
     <div className='optionContainer'>
               <ul className="numberedList">
